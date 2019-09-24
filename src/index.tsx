@@ -1,39 +1,13 @@
-import * as React from 'react';
+import React from 'react';
 import { render } from 'react-dom';
-// @ts-ignore codesandbox being wonky
-import chroma from 'chroma-js';
-import { shuffleArray } from './shuffleArray';
+import { Grid } from './Grid';
 
 import './styles.scss';
 
-const LENGTH = 20;
-const SIZE = 10;
-const COLOR_SCHEME = 'Spectral';
-
-const getColorByValue = (x: number): string =>
-  chroma
-    .scale(COLOR_SCHEME)
-    .domain([0, LENGTH])(x)
-    .hex();
-
-const array = [...Array(LENGTH)].map((_, i) => ({
-  value: i + 1,
-  color: getColorByValue(i),
-}));
-
 function App() {
   return (
-    <div className="App">
-      {array.map(x => (
-        <div
-          key={x.value}
-          style={{
-            width: `${SIZE}px`,
-            height: `${SIZE}px`,
-            background: x.color,
-          }}
-        />
-      ))}
+    <div className={'App'}>
+      <Grid row={5} col={6} size={'medium'} />
     </div>
   );
 }

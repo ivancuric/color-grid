@@ -1,4 +1,57 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 .App {
-  font-family: sans-serif;
-  text-align: center;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+.grid {
+  display: inline-grid;
+  grid-gap: 1px;
+  background: black;
+  border: 1px solid black;
+}
+
+.gridCell {
+  width: 1em;
+  height: 1em;
+  font: inherit;
+  cursor: pointer;
+  position: relative;
+  padding: 0;
+  border: none;
+  color: inherit;
+  background-color: #fff;
+  -webkit-appearance: none;
+
+  &:hover {
+    background: #f0f0f0;
+  }
+}
+
+.contents {
+  display: flex;
+  height: 100%;
+  background: var(--defaultColor);
+  position: relative;
+
+  &:hover {
+    background: var(--hoverColor);
+  }
+}
+
+.value {
+  font-size: .4em;
+  margin: auto;
+}
+
+.visuallyHidden {
+  width: 0;
+  height: 0;
+  position: absolute;
+  contain: strict;
+  overflow: hidden;
 }
