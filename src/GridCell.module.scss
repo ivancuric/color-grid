@@ -1,32 +1,22 @@
-.grid {
-  display: inline-grid;
-  grid-gap: 1px;
-  background: black;
-  border: 1px solid black;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-
-
-  * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
-}
-
 .gridCell {
   width: 1em;
   height: 1em;
   font: inherit;
   cursor: pointer;
   position: relative;
-  padding: 0;
   border: none;
   color: inherit;
+  margin: 0;
+  padding: 0;
   background-color: #fff;
   -webkit-appearance: none;
 
   &:hover {
     background: #f0f0f0;
+  }
+
+  &:focus {
+    z-index: 1;
   }
 }
 
@@ -42,7 +32,7 @@
 }
 
 .value {
-  font-size: .4em;
+  font-size: 0.4em;
   margin: auto;
 }
 
