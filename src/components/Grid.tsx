@@ -1,9 +1,9 @@
 import chroma from 'chroma-js';
 import React from 'react';
-import { COLOR_SCHEME, sizes } from './app-config';
+import { COLOR_SCHEME, sizes } from '../app-config';
 import styles from './Grid.module.scss';
 import { GridCell } from './GridCell';
-import { shuffleArray } from './shuffleArray';
+import { shuffleArray } from '../shuffleArray';
 
 type size = keyof typeof sizes;
 
