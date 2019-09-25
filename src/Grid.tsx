@@ -16,19 +16,14 @@ export const Grid = ({ row, col, size }: GridProps) => {
   const integerArray = [...Array(total)].map((_, i) => i + 1);
   const shuffledArray = shuffleArray(integerArray);
 
-  try {
-    if (total > 100) {
-      throw new Error(`Number of items must be lower than 100, was ${total}`);
-    }
-    if (row < 1) {
-      throw new Error(`Row should be a positive integer, was ${row}`);
-    }
-    if (col < 1) {
-      throw new Error(`Row should be a positive integer, was ${col}`);
-    }
-  } catch (error) {
-    console.error(error);
-    return null;
+  if (total > 100) {
+    throw new Error(`Number of items must be lower than 100, was ${total}`);
+  }
+  if (row < 1) {
+    throw new Error(`Row should be a positive integer, was ${row}`);
+  }
+  if (col < 1) {
+    throw new Error(`Row should be a positive integer, was ${col}`);
   }
 
   return (
