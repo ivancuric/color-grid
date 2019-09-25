@@ -1,9 +1,9 @@
 import chroma from 'chroma-js';
 import React from 'react';
-import { COLOR_SCHEME, sizes } from './app-config';
+import { COLOR_SCHEME, sizes } from '../app-config';
 import styles from './Grid.module.scss';
 import { GridCell } from './GridCell';
-import { shuffleArray } from './shuffleArray';
+import { shuffle } from '../shuffle';
 
 type size = keyof typeof sizes;
 
@@ -15,7 +15,7 @@ interface Props {
 
 export const Grid = ({ row, col, size }: Props) => {
   const total = row * col;
-  const shuffledArray = shuffleArray([...Array(total)].map((_, i) => i));
+  const shuffledArray = shuffle([...Array(total)].map((_, i) => i));
 
   /* color scale is generated once in the parent instead of n times for each GridCell */
   const colors = chroma.scale(COLOR_SCHEME).colors(total);

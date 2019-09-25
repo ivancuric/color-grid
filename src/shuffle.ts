@@ -1,6 +1,6 @@
 /* Fisher-Yates shuffle (https://bost.ocks.org/mike/shuffle/) */
 
-export function shuffleArray([...array]: number[]) {
+export function shuffle([...array]: number[]) {
   let m = array.length,
     t: number,
     i: number;
