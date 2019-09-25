@@ -21,4 +21,4 @@ Unaprijed definirane kolor sheme:
 
 - [ColorBrewer: Color Advice for Maps](http://colorbrewer2.org/#type=sequential&scheme=BuGn&n=3)
 
-Kako kolor sheme od ColorBrewer-a imaju ograničeni broj unaprijed definiranih vrijednosti, bilo je potrebno generirati vrijednosti programatski. Za to je korišten [chroma.js](https://vis4.net/chromajs/). Također je moguće u `app-config.ts` postaviti bili koji array boja koji će se interpolirati na broj polja.
+Kako kolor sheme od ColorBrewer-a imaju ograničeni broj unaprijed definiranih vrijednosti, bilo je potrebno generirati vrijednosti programatski. Za to je korišten [chroma.js](https://vis4.net/chromajs/). Također je moguće u `app-config.ts` postaviti bilo koji array boja koji će se interpolirati na broj polja.
