@@ -39,7 +39,7 @@ export const Grid = ({ row, col, size }: Props) => {
       }}
     >
       {shuffledArray.map(value => (
-        <GridCell key={value} value={value} color={colors[value]} />
+        <GridCell key={value} value={value + 1} color={colors[value]} />
       ))}
     </div>
   );
