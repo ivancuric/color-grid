@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
 import chroma from 'chroma-js';
-
-import { COLOR_SCHEME } from './config';
+import React, { useState } from 'react';
+import styles from './GridCell.module.scss';
 
 // https://www.w3.org/TR/WCAG20-TECHS/G18.html
 const getTextColor = (color: string) => {
@@ -12,34 +11,39 @@ const getTextColor = (color: string) => {
   return '#fff';
 };
 
-const getColorByValue = (value: number, total: number): string =>
-  chroma
-    .scale(COLOR_SCHEME)
-    .domain([0, total])(value)
-    .hex();
+interface Props {
+  value: number;
+  color: string;
+}
 
-export const GridCell = ({ value, total }) => {
-  const baseColor = getColorByValue(value, total);
+export const GridCell = ({ value, color }: Props) => {
+  const baseColor = color;
   const textColor = getTextColor(baseColor);
+  // lighten the color
   const hoverColor = chroma(baseColor).set('lab.l', '*1.1');
 
   const [isVisible, setIsVisible] = useState(false);
 
   return (
-    <button onClick={() => setIsVisible(!isVisible)} className={'gridCell'}>
+    <button
+      onClick={() => setIsVisible(!isVisible)}
+      className={styles.gridCell}
+    >
       {isVisible ? (
         <div
-          className={'contents'}
-          style={{
-            '--hoverColor': hoverColor,
-            '--defaultColor': baseColor,
-            color: textColor,
-          }}
+          className={styles.contents}
+          style={
+            {
+              '--hoverColor': hoverColor,
+              '--defaultColor': baseColor,
+              color: textColor,
+            } as React.CSSProperties
+          }
         >
-          <div className={'value'}>{value}</div>
+          <div className={styles.value}>{value}</div>
         </div>
       ) : (
-        <div className={'visuallyHidden'}>Click to reveal</div>
+        <div className={styles.visuallyHidden}>Click to reveal</div>
       )}
     </button>
   );

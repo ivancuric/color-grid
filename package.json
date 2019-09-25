@@ -6,6 +6,7 @@
   "main": "src/index.tsx",
   "dependencies": {
     "@sindresorhus/class-names": "1.1.0",
+    "@types/chroma-js": "^1.4.2",
     "chroma-js": "2.0.6",
     "node-sass": "4.12.0",
     "react": "16.9.0",
